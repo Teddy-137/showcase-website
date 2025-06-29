@@ -175,12 +175,9 @@ if (aiChatForm) {
     const fullPrompt = `${context}\n\nUser's question: "${userPrompt}"\n\nAnswer:`;
 
     try {
-      // ADDED YOUR API KEY HERE
-      require("dotenv").config({ path: ".env.local" });
-      const apiKey = process.env.API_KEY;
-      // const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+      const apiKey = "AIzaSyCrkuFRJ3BbgmTecSaoo61rXsX2k13hOvQ";
+      //   console.log("API Key:", apiKey); // Debugging line to check if API key is loaded
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -215,7 +212,7 @@ if (aiChatForm) {
         throw new Error("No valid response from API");
       }
     } catch (error) {
-      console.error("Gemini API call failed:", error);
+      console.error("API call failed:", error);
       aiError.textContent = `Error: ${error.message}`;
       aiError.classList.remove("hidden");
     } finally {
