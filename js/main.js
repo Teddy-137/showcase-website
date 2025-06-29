@@ -176,7 +176,8 @@ if (aiChatForm) {
 
     try {
       // ADDED YOUR API KEY HERE
-      const apiKey = "AIzaSyCrkuFRJ3BbgmTecSaoo61rXsX2k13hOvQ";
+      require("dotenv").config({ path: ".env.local" });
+      const apiKey = process.env.API_KEY;
       // const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
