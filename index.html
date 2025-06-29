@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tewodros Anteneh | Software Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="js/tailwindconf.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <div
+    class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 z-50"
+    id="scroll-progress"
+  ></div>
+  <body
+    class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300"
+  >
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm dark:bg-gray-800/90"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <span class="text-xl font-bold gradient-text tracking-tight"
+              >Tewodros Anteneh</span
+            >
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <div class="flex items-center space-x-6">
+              <a
+                href="#home"
+                class="nav-item nav-link active text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="nav-item nav-link text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >About</a
+              >
+              <a
+                href="#portfolio"
+                class="nav-item nav-link text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >Portfolio</a
+              >
+              <a
+                href="#awards"
+                class="nav-item nav-link text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >Awards</a
+              >
+              <a
+                href="#ai-chat"
+                class="nav-item nav-link text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >AI Chat</a
+              >
+              <a
+                href="#contact"
+                class="nav-item nav-link text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium dark:text-gray-300 dark:hover:text-white"
+                >Contact</a
+              >
+            </div>
+            <div class="flex items-center space-x-4 ml-6">
+              <div class="theme-toggle" id="themeToggle">
+                <div class="theme-toggle-handle">
+                  <i class="fas fa-sun text-yellow-400 text-xs dark:hidden"></i>
+                  <i
+                    class="fas fa-moon text-blue-200 text-xs hidden dark:block"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="md:hidden flex items-center">
+            <div class="theme-toggle mr-4" id="mobileThemeToggle">
+              <div class="theme-toggle-handle">
+                <i class="fas fa-sun text-yellow-400 text-xs dark:hidden"></i>
+                <i
+                  class="fas fa-moon text-blue-200 text-xs hidden dark:block"
+                ></i>
+              </div>
+            </div>
+            <button
+              id="menu-toggle"
+              class="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline-none"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >About</a
+          >
+          <a
+            href="#portfolio"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >Portfolio</a
+          >
+          <a
+            href="#awards"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >Awards</a
+          >
+          <a
+            href="#ai-chat"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >AI Chat</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center hero-pattern section-fade"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left"
+      >
+        <div class="lg:flex lg:items-center lg:justify-between">
+          <div class="lg:w-1/2">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+              Hi, I'm <span class="gradient-text">Tewodros Anteneh</span>
+            </h1>
+            <h2
+              class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-6"
+            >
+              Electrical And Computer Engineering Student & Aspiring Software
+              Developer
+            </h2>
+            <p
+              class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-lg mx-auto md:mx-0"
+            >
+              Passionate about building innovative software solutions and
+              leveraging technology to solve real-world problems.
+            </p>
+            <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+              <a
+                href="#contact"
+                class="px-6 py-3 gradient-bg text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 btn-hover"
+              >
+                Get In Touch
+              </a>
+              <a
+                href="assets/Tewodros_m_Resume.pdf"
+                download="Tewodros_Anteneh_Resume.pdf"
+                class="px-6 py-3 border border-primary-500 text-primary-500 font-medium rounded-lg hover:bg-primary-50 dark:hover:bg-primary-900/20 dark:text-primary-400 dark:border-primary-400 transition duration-300 btn-hover"
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+            <div
+              class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl floating"
+            >
+              <img
+                src="assets/images/your-profile-photo.jpg"
+                alt="Tewodros Anteneh"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-20 min-h-screen bg-white dark:bg-gray-800 section-fade"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            About Me
+          </h2>
+          <div class="section-divider"></div>
+          <p
+            class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+          >
+            I am a dedicated and enthusiastic Electrical and Computer
+            Engineering student at Addis Ababa Science and Technology University
+            with a strong foundation in software development and
+            problem-solving.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="about-item bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 card-hover"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 flex items-center justify-center mr-4 glow"
+              >
+                <i
+                  class="fas fa-graduation-cap text-blue-500 dark:text-blue-300 text-xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-white">Education</h3>
+            </div>
+            <div class="mb-4">
+              <h4 class="font-bold text-lg text-gray-800 dark:text-white">
+                Bachelor of Science in Electrical and Computer Engineering
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                Addis Ababa Science and Technology University
+              </p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                Expected Graduation: June 2027
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg text-gray-800 dark:text-white">
+                Backend Web Development with Django
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                Google Developers Club
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="about-item bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 card-hover"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 flex items-center justify-center mr-4 glow"
+              >
+                <i
+                  class="fas fa-cogs text-purple-500 dark:text-purple-300 text-xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-white">Skills</h3>
+            </div>
+            <div class="skill-badge">
+              <div class="flex flex-wrap gap-2 items-center mb-4">
+                <img
+                  src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
+                  alt="Java"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                  alt="Python"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"
+                  alt="C++"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white"
+                  alt="SQL"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                  alt="HTML5"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                  alt="CSS3"
+                  class="h-8"
+                />
+              </div>
+
+              <!-- Frameworks & Libraries -->
+              <div class="flex flex-wrap gap-2 mb-4">
+                <img
+                  src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
+                  alt="Django"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"
+                  alt="FastAPI"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"
+                  alt="Bootstrap"
+                  class="h-8"
+                />
+              </div>
+
+              <!-- Developer Tools -->
+              <div class="flex flex-wrap gap-2">
+                <img
+                  src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+                  alt="Docker"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"
+                  alt="Git"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+                  alt="GitHub"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"
+                  alt="VS Code"
+                  class="h-8"
+                />
+                <img
+                  src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellij-idea&logoColor=white"
+                  alt="IntelliJ IDEA"
+                  class="h-8"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section
+      id="portfolio"
+      class="py-20 min-h-screen bg-gray-50 dark:bg-gray-900 section-fade"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Featured Projects
+          </h2>
+          <div class="section-divider"></div>
+          <p
+            class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+          >
+            Here are some of the projects I've worked on.
+          </p>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          id="portfolio-grid"
+        >
+          <div
+            class="portfolio-item rounded-lg overflow-hidden shadow-lg"
+            style="
+              background-image: url('assets/images/thumbnail.png');
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="portfolio-content p-6">
+              <div class="flex flex-wrap mb-2">
+                <span class="portfolio-tag">Django</span>
+                <span class="portfolio-tag">PostgreSQL</span>
+                <span class="portfolio-tag">Docker</span>
+                <span class="portfolio-tag">Gemini API</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">MediHelp Plus</h3>
+              <p class="text-sm opacity-90 mb-4">
+                A comprehensive healthcare platform enabling patients to access
+                medical resources, symptom checking, doctor consultations, and
+                educational content for informed healthcare decisions.
+              </p>
+              <a
+                href="https://medihelp-frontend-ntx5.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-project-btn mt-4 px-4 py-2 bg-white text-gray-800 rounded-full text-sm font-medium hover:bg-gray-100 transition btn-hover inline-block"
+                >View Project</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="portfolio-item rounded-lg overflow-hidden shadow-lg"
+            style="
+              background-image: url('assets/images/terminal.png');
+              /* background-image: url('https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop'); */
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="portfolio-content p-6">
+              <div class="flex flex-wrap mb-2">
+                <span class="portfolio-tag">Java</span>
+                <span class="portfolio-tag">Sockets</span>
+                <span class="portfolio-tag">Multi-threading</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-2">Terminal Chat</h3>
+              <p class="text-sm opacity-90 mb-4">
+                A client-server chat system supporting 20+ concurrent users with
+                private messaging and message history, built with socket-based
+                networking and multi-threading for real-time communication.
+              </p>
+              <a
+                href="https://github.com/Teddy-137/Terminal-Chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="view-project-btn mt-4 px-4 py-2 bg-white text-gray-800 rounded-full text-sm font-medium hover:bg-gray-100 transition btn-hover inline-block"
+                >View Project</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section
+      id="awards"
+      class="py-20 min-h-screen bg-white dark:bg-gray-800 section-fade"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Awards & Achievements
+          </h2>
+          <div class="section-divider"></div>
+          <p
+            class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+          >
+            A collection of my notable awards and recognitions.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="about-item bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 card-hover"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-yellow-100 to-yellow-200 dark:from-yellow-900 dark:to-yellow-800 flex items-center justify-center mr-4 glow"
+              >
+                <i
+                  class="fas fa-trophy text-yellow-500 dark:text-yellow-300 text-xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-white">
+                First Place Winner
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2 font-semibold">
+              AASTU Tech Fest 2025 Hackathon
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Awarded by Google Developers Group for the MediHelp Plus project.
+            </p>
+          </div>
+
+          <div
+            class="about-item bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 card-hover"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 flex items-center justify-center mr-4 glow"
+              >
+                <i
+                  class="fas fa-medal text-blue-500 dark:text-blue-300 text-xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-white">
+                Nationwide Top Scorer
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2 font-semibold">
+              IYMC Final Round
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Achieved the highest score in Ethiopia in the International Youth
+              Math Challenge.
+            </p>
+          </div>
+
+          <div
+            class="about-item bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-600 card-hover"
+          >
+            <div class="flex items-center mb-6">
+              <div
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center mr-4 glow"
+              >
+                <i
+                  class="fas fa-award text-gray-500 dark:text-gray-300 text-xl"
+                ></i>
+              </div>
+              <h3 class="text-xl font-semibold dark:text-white">
+                Silver Honour
+              </h3>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-2 font-semibold">
+              IYMC
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Awarded for excellent performance among participants worldwide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Chat Section -->
+    <section
+      id="ai-chat"
+      class="py-20 min-h-screen bg-gray-50 dark:bg-gray-900 section-fade"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Ask Me Anything
+          </h2>
+          <div class="section-divider"></div>
+          <p
+            class="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+          >
+            Have a question about my skills, projects, or experience? Ask my AI
+            assistant.
+          </p>
+        </div>
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 p-6 md:p-8"
+          >
+            <form id="aiChatForm" class="space-y-4">
+              <div>
+                <label for="ai-prompt" class="sr-only">Your Question</label>
+                <input
+                  type="text"
+                  id="ai-prompt"
+                  name="ai-prompt"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-gray-700 dark:text-white transition duration-300 contact-input"
+                  placeholder="e.g., What are your strongest skills?"
+                />
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  id="ai-submit-btn"
+                  class="px-6 py-3 gradient-bg text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 w-full btn-hover flex items-center justify-center"
+                >
+                  Ask AI
+                </button>
+              </div>
+            </form>
+            <div id="ai-response-container" class="mt-6">
+              <div id="ai-loader" class="hidden loader"></div>
+              <div
+                id="ai-response"
+                class="p-4 bg-gray-100 dark:bg-gray-700 rounded-lg text-gray-800 dark:text-gray-200 prose dark:prose-invert max-w-none"
+              ></div>
+              <div
+                id="ai-error"
+                class="hidden mt-4 p-3 bg-red-100 text-red-700 rounded-lg"
+              >
+                An error occurred. Please try again.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-20 min-h-screen dark:bg-gray-800 section-fade"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Get In Touch
+          </h2>
+          <div class="section-divider"></div>
+          <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+            Have a project in mind or want to discuss opportunities? I'd love to
+            hear from you!
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden border border-gray-100 dark:border-gray-700 card-hover"
+          >
+            <div class="p-6 md:p-8">
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/xkgbywno"
+                method="POST"
+                class="space-y-6"
+              >
+                <!-- Contact form fields remain the same -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="name"
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-gray-700 dark:text-white transition duration-300 contact-input"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                      >Email</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-gray-700 dark:text-white transition duration-300 contact-input"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-gray-700 dark:text-white transition duration-300 contact-input"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="message"
+                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-purple-500 dark:focus:border-purple-500 dark:bg-gray-700 dark:text-white transition duration-300 contact-input"
+                  ></textarea>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    class="px-6 py-3 gradient-bg text-white font-medium rounded-lg shadow-md hover:shadow-lg transition duration-300 w-full btn-hover"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div
+              class="bg-gray-50 dark:bg-gray-700 px-6 py-8 border-t border-gray-100 dark:border-gray-700"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div
+                    class="w-12 h-12 mx-auto bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-3 glow"
+                  >
+                    <i
+                      class="fas fa-envelope text-blue-500 dark:text-blue-300"
+                    ></i>
+                  </div>
+                  <h4
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
+                    Email
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    <a
+                      href="mailto:tewodrosanteneh10@gmail.com"
+                      class="hover:text-blue-600 dark:hover:text-blue-400 transition duration-300"
+                      >tewodrosanteneh10@gmail.com</a
+                    >
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="w-12 h-12 mx-auto bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-3 glow"
+                  >
+                    <i
+                      class="fas fa-phone-alt text-purple-500 dark:text-purple-300"
+                    ></i>
+                  </div>
+                  <h4
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
+                    Phone
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    <a
+                      href="tel:+251930858695"
+                      class="hover:text-purple-600 dark:hover:text-purple-400 transition duration-300"
+                      >+251930858695</a
+                    >
+                  </p>
+                </div>
+                <div>
+                  <div
+                    class="w-12 h-12 mx-auto bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-3 glow"
+                  >
+                    <i
+                      class="fas fa-map-marker-alt text-blue-500 dark:text-blue-300"
+                    ></i>
+                  </div>
+                  <h4
+                    class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
+                    Location
+                  </h4>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    Addis Ababa, Ethiopia
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <span class="text-xl font-bold gradient-text tracking-tight"
+              >Tewodros Anteneh</span
+            >
+            <p class="text-gray-400 mt-2">Aspiring Software Engineer</p>
+          </div>
+          <div class="flex space-x-6">
+            <a
+              href="https://github.com/Teddy-137"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition duration-300 social-icon"
+            >
+              <i class="fab fa-github text-xl"></i>
+            </a>
+          </div>
+        </div>
+        <div
+          class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm"
+        >
+          <p>© 2025 Tewodros Anteneh. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
