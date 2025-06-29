@@ -155,6 +155,10 @@
       id="home"
       class="min-h-screen flex items-center justify-center hero-pattern section-fade"
     >
+      <canvas
+        id="networkCanvas"
+        class="absolute top-0 left-0 w-full h-full opacity-20"
+      ></canvas>
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left"
       >
@@ -216,7 +220,7 @@
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 p-6">
             About Me
           </h2>
           <div class="section-divider"></div>
@@ -279,6 +283,10 @@
               <h3 class="text-xl font-semibold dark:text-white">Skills</h3>
             </div>
             <div class="skill-badge">
+              <!-- Programming Languages -->
+              <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+                Programming Languages
+              </h4>
               <div class="flex flex-wrap gap-2 items-center mb-4">
                 <img
                   src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
@@ -311,8 +319,10 @@
                   class="h-8"
                 />
               </div>
-
               <!-- Frameworks & Libraries -->
+              <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+                Frameworks & Libraries
+              </h4>
               <div class="flex flex-wrap gap-2 mb-4">
                 <img
                   src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"
@@ -332,6 +342,9 @@
               </div>
 
               <!-- Developer Tools -->
+              <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-2">
+                Developer Tools
+              </h4>
               <div class="flex flex-wrap gap-2">
                 <img
                   src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"

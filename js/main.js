@@ -234,3 +234,79 @@ window.addEventListener("scroll", () => {
   const scrolled = (window.scrollY / scrollHeight) * 100;
   scrollProgress.style.width = `${scrolled}%`;
 });
+// main.js - Network Animation
+
+const canvas = document.getElementById("networkCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
+
+// Nodes for the network
+const nodes = [];
+const nodeCount = 45;
+
+// Create nodes
+for (let i = 0; i < nodeCount; i++) {
+  nodes.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: Math.random() * 2 - 1,
+    vy: Math.random() * 2 - 1,
+    radius: Math.random() * 3 + 2,
+  });
+}
+
+// Animation loop
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Update nodes
+  nodes.forEach((node) => {
+    node.x += node.vx;
+    node.y += node.vy;
+
+    // Bounce off edges
+    if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
+    if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+
+    // Draw node
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "#3b82f6";
+    ctx.fill();
+
+    // Draw connections
+    nodes.forEach((otherNode) => {
+      const dx = node.x - otherNode.x;
+      const dy = node.y - otherNode.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 150) {
+        ctx.beginPath();
+        ctx.moveTo(node.x, node.y);
+        ctx.lineTo(otherNode.x, otherNode.y);
+        ctx.strokeStyle = `rgba(59, 130, 246, ${1 - distance / 150})`;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    });
+  });
+
+  //   // Flash effect
+  //   if (Math.random() < 0.02) {
+  //     ctx.fillStyle = "rgba(255, 255, 255, 0.3)";
+  //     ctx.fillRect(0, 0, canvas.width, canvas.height);
+  //   }
+
+  requestAnimationFrame(animate);
+}
+
+// Start animation
+animate();
+
+// Handle resize
+window.addEventListener("resize", () => {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+});
